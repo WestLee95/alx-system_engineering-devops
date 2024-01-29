@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script is displaying:
+#	-The content of the current directory
+#	-In a list format
+#	-Where only the part of the name after the first dash is displayed
+
+for filename in *;
+do
+	if [[ $filename != .* ]];
+	then
+# Extract the part after the first dash using parameter expansion
+	name_after_dash="${filename##*-}"
+		echo "$name_after_dash"
+	fi
+done
