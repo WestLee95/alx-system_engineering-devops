@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
-# This script is displaying the time for 12hrs and 59 minutes.
+# This script is displaying the time for 12hrs and 59 minutes."
 
-counter=0
+hour=0
+minute=0
 
-while [[ $counter -le 60 ]];
+while [ $hour -lt 13 ];
 do
-        case $counter in
-                0) echo Hour: 0;;
-                60) echo Hour : 1;;
-                *) echo $counter;;
-	esac
+	echo "Hour: $hour"
 
-	counter=$((counter + 1))
+	while [ $minute -lt 60 ];
+	do
+		echo "$minute"
+		minute=$((minute + 1))
+done
+
+	minute=0  # Resets the minutes for the next hour
+	hour=$((hour + 1))
 done
