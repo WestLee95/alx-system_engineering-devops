@@ -1,4 +1,5 @@
 Networking basics #0
+![giphy](https://github.com/WestLee95/alx-system_engineering-devops/assets/123350869/068dc78f-80e6-4540-95d3-33792907c777)
 Topics handled in this dir. were:
 	OSI Model
 	What is a LAN
