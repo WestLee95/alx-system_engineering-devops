@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#configures an Ubuntu server with changing the IP of the localhost and of facebook server.
+
+echo "127.0.0.2 localhost" >> /etc/hosts.new
+echo "8.8.8.8 facebook.com" >> /etc/hosts.new
+
+echo "Hosts modified don't forget to change tomorrow!!"
