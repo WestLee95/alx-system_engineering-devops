@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
+
 import requests
 import sys
+
 
 def fetch_employee_todo_progress(employee_id):
     # Fetch employee information
@@ -16,8 +18,7 @@ def fetch_employee_todo_progress(employee_id):
     employee_name = employee.get('name')
 
     # Fetch todos for the employee
-    todos_url = f'https://jsonplaceholder.typicode.com/
-    todos?userId={employee_id}'
+    todos_url = f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
     todos_response = requests.get(todos_url)
 
     if todos_response.status_code != 200:
@@ -32,10 +33,10 @@ def fetch_employee_todo_progress(employee_id):
     total_number_of_tasks = len(todos)
 
     # Print the TODO list progress
-    print(f"Employee {employee_name} is done with tasks
-            ({number_of_done_tasks}/{total_number_of_tasks}):")
+    print(f"Employee {employee_name} is done with tasks({number_of_done_tasks}/{total_number_of_tasks}):")
     for task in done_tasks:
         print(f"\t {task.get('title')}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
