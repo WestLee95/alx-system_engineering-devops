@@ -3,29 +3,36 @@
 import requests
 
 def get_todo_progress(employee_id):
-    url = f"YOUR_API_URL/employees/{employee_id}/todo"
+  """
+  Fetches and displays an employee's TODO list progress from a REST API (assuming JSONPlaceholder).
 
-    try:
-        response = requests.get(url)
-        response.raise_for_status()  # Raise an exception for non-200 status codes
-    except requests.exceptions.RequestException as e:
-        print(f"An error occurred: {e}")
+  Args:
+      employee_id (int): The ID of the employee whose progress to retrieve.
+  """
+
+  url = f"https://jsonplaceholder.typicode.com/todos/{employee_id}"
+
+  try:
+    response = requests.get(url)
+    response.raise_for_status()  # Raise an exception for non-200 status codes
+  except requests.exceptions.RequestException as e:
+    print(f"An error occurred: {e}")
     return
 
-    data = response.json()
+  data = response.json()
 
-  
-  employee_name = data.get("name")
-  completed_tasks = data.get("completed_tasks", 0)
-  total_tasks = data.get("total_tasks", 0)
+  # Extract information (assuming completed is a boolean for task status)
+  # Modify logic based on your actual API response structure
+  completed_tasks = sum(task["completed"] for task in data)
+  total_tasks = len(data)
 
-  # Display progress in the required format
+  employee_name = "Employee Name (Placeholder)"
   print(f"Employee {employee_name} is done with tasks({completed_tasks}/{total_tasks}):")
-  for task in data.get("completed_tasks_list", []):
-    print(f"\t{task['title']}")
+  for task in data:
+      if task["completed"]:
+      print(f"\t{task['title']}")
 
 # Get employee ID from user input (replace with appropriate input method if needed)
 employee_id = int(input("Enter employee ID: "))
 
 get_todo_progress(employee_id)
-
