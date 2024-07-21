@@ -1,0 +1,21 @@
+*What happens when you type https://www.google.com in your browser and press Enter*
+
+First up, your browser needs to figure out where Google actually lives on the internet. It's like looking up for a friend's address, but instead of a phonebook, your computer uses something called DNS (Domain Name System). Your browser asks a DNS server, "Yo, where's Google at?" and gets back the actual IP address. 
+ 
+Afterwards, your computer starts chatting with Google's servers using TCP/IP. Think of it as the language computers use to talk to each other over the internet. It's all about making sure the data gets where it needs to go in one piece. 
+ 
+But hold up! Before your request even leaves your computer, it might have to pass through a firewall. This is like a bouncer at a club, checking to make sure nothing sketchy is going in or out. 
+ 
+Once your request makes it to Google, it's time for some security measures. HTTPS and SSL kick in, basically putting your conversation in a secret code that only you and Google can understand. No eavesdropping allowed and even if someone does hear what you two are saying, they can’t understand it cause it’s sounds gibberish to them. 
+ 
+Google's servers are crazy busy, so they use something called a load balancer. It's like a traffic cop, directing your request to whichever server isn't swamped at the moment. 
+ 
+The web server that gets your request is like the front desk at a hotel. It handles the basics and figures out what you need. If you're just looking for a simple webpage, it might handle that itself. 
+ 
+But if you're doing something more complicated, like a search, the web server passes your request to an application server. This is where the real magic happens – it's the brain that figures out what you're looking for. 
+ 
+Finally, if the app server needs to look up any info, it hits up the database. This is Google's massive filing cabinet where it keeps all its data. 
+ 
+And voila! After all that (which happens in the blink of an eye), you get your Google homepage or search results. 
+ 
+Hope this article made you get a generally solid understanding about the topic. Drop a like if you enjoyed reading. 
