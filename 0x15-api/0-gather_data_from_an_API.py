@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import requests
 import sys
 
@@ -47,3 +48,6 @@ if __name__ == '__main__':
             fetch_employee_todo_progress(employee_id)
         except ValueError:
             print("Please provide a valid integer for the employee ID.")
+=======
+
+>>>>>>> 06e7cbbaf15b1e2426181d7b01f1116350b4bf67
