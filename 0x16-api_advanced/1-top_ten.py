@@ -2,22 +2,27 @@
 
 import requests
 
-def top_ten(subreddit):
-    # Reddit API endpoint for hot posts
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
 
-    # Set a custom User-Agent to avoid potential issues with the API
+def top_ten(subreddit):
+    """
+    Queries the Reddit API and prints the titles of the first 10 hot posts
+    listed for a given subreddit.
+
+    Args:
+        subreddit (str): The name of the subreddit to query.
+
+    Returns:
+        None
+    """
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {'User-Agent': 'MyRedditBot/1.0'}
 
-    # Make the API request
     response = requests.get(url, headers=headers, allow_redirects=False)
 
-    # Check if the subreddit is valid
     if response.status_code == 200:
         data = response.json()
         posts = data['data']['children']
 
-        # Print the titles of the first 10 hot posts
         for i in range(min(10, len(posts))):
             print(posts[i]['data']['title'])
     else:
