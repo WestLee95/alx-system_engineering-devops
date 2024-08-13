@@ -1,10 +1,5 @@
 #!/usr/bin/python3
-
-import requests
-
-
-def top_ten(subreddit):
-    """
+"""
     Queries the Reddit API and prints the titles of the first 10 hot posts
     listed for a given subreddit.
 
@@ -13,6 +8,15 @@ def top_ten(subreddit):
 
     Returns:
         None
+    """
+
+import requests
+
+
+def top_ten(subreddit):
+    """
+    Function that queries the Reddit API
+    - If not a valid subreddit, print None.
     """
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {'User-Agent': 'MyRedditBot/1.0'}
